@@ -1,0 +1,50 @@
+.navbar-top {
+    background-color: white;
+    padding: 20px;
+    width: auto;
+}
+
+.logo {
+    font-size: larger;
+}
+
+.space-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-links {
+    display: inline-block;
+}
+
+.nav {
+    margin: auto 0;
+    text-align: center;
+}
+
+.nav-item {
+    padding-right: 25px;
+    text-decoration: none;
+}
+
+a:link {
+    color: gray;
+}
+
+a:visited {
+    color: gray;
+}
+
+a:hover {
+    color: lightblue;
+}
+
+a:active {
+    color: black;
+}
+
+@media #{$sm-screen} {
+    a {
+        display: none;
+    }
+}
