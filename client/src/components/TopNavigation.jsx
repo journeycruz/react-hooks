@@ -7,15 +7,15 @@ const TopNavigation = () => {
       href: 'https://reactjs.org/docs/hooks-intro.html',
     },
     {
-      name: 'Clone This Repo',
+      name: 'Clone This Repository',
       href: 'https://github.com/journeycruz/react-hooks',
     },
   ];
 
   return (
-    <header className='navbar-top'>
-      <div className='space-between'>
-        <div className='logo montserrat-bold'>React Hook Practice Exercies</div>
+    <header className='navbar-top sticky'>
+      <div className='space-between full-width'>
+        <div className='logo montserrat-semi'>React Hook Practice Exercises</div>
         <div className='nav'>
           {navigation.map((item, i) => (
             <div key={i} className='nav-links raleway-light'>

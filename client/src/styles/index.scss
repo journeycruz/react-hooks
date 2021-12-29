@@ -2,11 +2,14 @@
     Default Styles
 ***************************************/
 
-@import '../styles/_media-queries.scss';
-@import '../styles/_typography.scss';
+@import '../styles/media-queries';
+@import '../styles/colors';
+@import '../styles/typography';
 
 /**************************************
     Component Styles
 ***************************************/
 
-@import '../styles/TopNavigation.scss';
+@import '../styles/components/TopNavigation.scss';
+@import '../styles/components/HookDemonstrations.scss';
+@import '../styles/components/HookTemplate.scss';
