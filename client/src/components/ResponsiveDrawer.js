@@ -12,6 +12,7 @@ import TopNavigation from './TopNavigation';
 import HookDemonstrations from './HookDemonstrations';
 import '../styles/components/Sidenav.scss';
 import { basicHooks } from '../hooks/BasicHooks';
+import { advancedHooks } from '../hooks/AdvancedHooks';
 
 const drawerWidth = '30%';
 
@@ -35,7 +36,6 @@ export default function PermanentDrawerRight() {
       <Drawer
         sx={{
           zIndex: '0',
-          marginTop: '50px',
           width: drawerWidth,
           flexShrink: 0,
           '& .MuiDrawer-paper': {
@@ -43,26 +43,28 @@ export default function PermanentDrawerRight() {
             boxSizing: 'border-box',
           },
         }}
-        className='drawer'
+        className="drawer"
         variant="permanent"
         anchor="right"
       >
         <Toolbar />
         <List>
           {basicHooks.map((text, index) => (
-            <ListItem button key={index}>
-              <a href={'#' + text.to}>
+            <a href={'#' + text.to} key={index}>
+              <ListItem button>
                 <ListItemText primary={text.title} />
-              </a>
-            </ListItem>
+              </ListItem>
+            </a>
           ))}
         </List>
         <Divider />
         <List>
-          {['useReducer', 'useCallback', 'useMemo', 'useReducer', 'useRef', 'useImperativeHandle', 'useLayoutEffect', 'useDebugValue'].map((text, index) => (
-            <ListItem button key={index}>
-              <ListItemText primary={text} />
-            </ListItem>
+          {advancedHooks.map((text, index) => (
+            <a href={'#' + text.to} key={index}>
+              <ListItem button>
+                <ListItemText primary={text.title} />
+              </ListItem>
+            </a>
           ))}
         </List>
         <Divider />

@@ -1,13 +1,19 @@
 import React from 'react';
+import Divider from '@mui/material/Divider';
+import Toolbar from '@mui/material/Toolbar';
 
 const HookTemplate = ({ title, description, usage, stackBlitz }) => {
   return (
     <div>
-      <p className='title montserrat-semi'>{title}</p>
-      <hr />
-      <p className='text raleway-medium'>{description}</p>
+      <h2 className='title'>{title}</h2>
+      <br />
+      <Divider />
+      <br />
+      <span className='lead'>{description}</span>
+      <Toolbar />
       <iframe src={stackBlitz} frameBorder='0'></iframe>
-      <p className='text raleway-medium'>{usage}</p>
+      <Toolbar />
+      <p className='text'>{usage}</p>
     </div>
   );
 };
