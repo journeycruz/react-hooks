@@ -3,3 +3,9 @@ main {
     margin: auto;
     background-color: white;
 }
+
+@media #{$sm-screen} {
+    .drawer {
+        display: none;
+    }
+}

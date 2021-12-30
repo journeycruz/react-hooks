@@ -39,24 +39,24 @@
     text-decoration: none;
 }
 
-a {
+.nav-links a {
     display: none;
 }
 
 @media #{$lg-screen} {
-    a {
+    .nav-links a {
         display: block;
     }
-    a:link {
+    .nav-links a:link {
         color: gray;
     }
-    a:visited {
+    .nav-links a:visited {
         color: gray;
     }
-    a:hover {
+    .nav-links a:hover {
         color: white;
     }
-    a:active {
+    .nav-links a:active {
         color: $blue;
     }
 }

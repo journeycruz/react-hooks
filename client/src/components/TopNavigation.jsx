@@ -13,7 +13,7 @@ const TopNavigation = () => {
   ];
 
   return (
-    <header className='navbar-top sticky'>
+    <header className='navbar-top'>
       <div className='space-between full-width'>
         <div className='logo montserrat-semi'>React Hook Practice Exercises</div>
         <div className='nav'>

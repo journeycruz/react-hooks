@@ -1,20 +1,13 @@
 import React from 'react';
 import HookTemplate from './HookTemplate';
+import { basicHooks } from '../hooks/BasicHooks';
+import Toolbar from '@mui/material/Toolbar';
 
 const HookDemonstrations = () => {
-  const hooks = [
-    {
-      title: 'useState',
-      description: 'The useState hook allows a functional component to set a state that can be changed or updated later on a browser event.',
-      usage: 'useState returns a pair: the current state value and the function that lets you update it.',
-      stackBlitz:
-        'https://stackblitz.com/edit/react-rw54jp?file=src/App.js',
-    },
-  ];
   return (
     <main>
-      {hooks.map((hook, i) => (
-        <div key={i}>
+      {basicHooks.map((hook, i) => (
+        <div key={i} id={hook.to}>
           <HookTemplate
             title={hook.title}
             description={hook.description}

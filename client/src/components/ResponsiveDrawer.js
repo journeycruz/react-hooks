@@ -5,15 +5,13 @@ import CssBaseline from '@mui/material/CssBaseline';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import List from '@mui/material/List';
-import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
 import TopNavigation from './TopNavigation';
 import HookDemonstrations from './HookDemonstrations';
+import '../styles/components/Sidenav.scss';
+import { basicHooks } from '../hooks/BasicHooks';
 
 const drawerWidth = '30%';
 
@@ -29,7 +27,7 @@ export default function PermanentDrawerRight() {
       </AppBar>
       <Box
         component="main"
-        sx={{ flexGrow: 1, bgcolor: 'background.default', p: 3 }}
+        sx={{ flexGrow: 1, bgcolor: 'background.default', p: 5 }}
       >
         <Toolbar />
         <HookDemonstrations />
@@ -37,6 +35,7 @@ export default function PermanentDrawerRight() {
       <Drawer
         sx={{
           zIndex: '0',
+          marginTop: '50px',
           width: drawerWidth,
           flexShrink: 0,
           '& .MuiDrawer-paper': {
@@ -50,26 +49,32 @@ export default function PermanentDrawerRight() {
       >
         <Toolbar />
         <List>
-          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
+          {basicHooks.map((text, index) => (
+            <ListItem button key={index}>
+              <a href={'#' + text.to}>
+                <ListItemText primary={text.title} />
+              </a>
+            </ListItem>
+          ))}
+        </List>
+        <Divider />
+        <List>
+          {['useReducer', 'useCallback', 'useMemo', 'useReducer', 'useRef', 'useImperativeHandle', 'useLayoutEffect', 'useDebugValue'].map((text, index) => (
+            <ListItem button key={index}>
               <ListItemText primary={text} />
             </ListItem>
           ))}
         </List>
         <Divider />
         <List>
-          {['All mail', 'Trash', 'Spam'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
+          {['Custom Hooks'].map((text, index) => (
+            <ListItem button key={index}>
               <ListItemText primary={text} />
             </ListItem>
           ))}
         </List>
+        <Toolbar />
+        <Toolbar />
       </Drawer>
     </Box>
   );
