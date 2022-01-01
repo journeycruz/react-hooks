@@ -11,7 +11,6 @@ const HookTemplate = ({ title, description, body, usage, stackBlitz }) => {
       <br />
       <span className='lead'>{description}</span>
       <span>{body}</span>
-      <Toolbar />
       <iframe src={stackBlitz} frameBorder='0'></iframe>
       <Toolbar />
       <p className='text'>{usage}</p>
