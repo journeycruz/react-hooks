@@ -13,7 +13,7 @@ h1 {
     font-family: 'Open Sans', sans-serif;
     font-weight: 800;
     font-size: 2.5rem;
-    margin: 0;
+    margin: 1rem 0 0 0;
 }
 
 h2 {
@@ -23,8 +23,14 @@ h2 {
     margin: 1rem 0 0 0;
 }
 
+h3 {
+    margin: 0;
+    font-size: medium;
+}
+
 .lead {
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
     font-size: 1.5rem;
+    margin: 0;
 }

@@ -7,6 +7,7 @@ import { advancedHooks } from '../hooks/AdvancedHooks';
 const HookDemonstrations = () => {
   return (
     <main>
+      <Toolbar id='basic-hooks' />
       <h1>Basic Hooks</h1>
       <br />
       <span className="lead">
@@ -28,6 +29,7 @@ const HookDemonstrations = () => {
           <HookTemplate
             title={hook.title}
             description={hook.description}
+            body={hook.body}
             usage={hook.usage}
             stackBlitz={hook.stackBlitz}
           />

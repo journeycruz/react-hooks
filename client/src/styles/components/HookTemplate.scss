@@ -1,5 +1,24 @@
 iframe {
     width: 100%;
     height: 35em;
-    border-radius: 20px;
+    border-radius: 8px;
+}
+
+.code-block {
+    background-color: #282C34;
+    padding: 15px;
+    border-radius: 8px;
+    color: white;
+}
+
+.note {
+    background-color: #FFF7D1;
+    line-height: 1.75rem;
+    padding: 1.2rem 1.5rem;
+    margin-top: 1rem;
+    border-left: .6rem solid #FFE564;
+}
+
+.note-text {
+    font-family: 'Open Sans' sans-serif;
 }
