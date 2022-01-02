@@ -207,4 +207,20 @@ export const basicHooks = [
       'useState returns a pair: the current state value and the function that lets you update it.',
     stackBlitz: 'https://stackblitz.com/edit/react-rw54jp?file=src/App.js',
   },
+  {
+    title: 'useEffect',
+    to: 'useEffect',
+    description: null,
+    body: null,
+    usage: null,
+    stackBlitz: null
+  },
+  {
+    title: 'useContext',
+    to: 'useContext',
+    description: null,
+    body: null,
+    usage: null,
+    stackBlitz: null
+  },
 ];
