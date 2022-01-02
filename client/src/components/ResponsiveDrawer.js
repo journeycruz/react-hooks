@@ -25,7 +25,7 @@ const theme = createTheme({
 
 const drawerWidth = '30%';
 
-export default function PermanentDrawerRight() {
+export default function ResponsiveDrawer() {
   return (
     <ThemeProvider theme={theme}>
       <Box sx={{ display: 'flex' }}>

@@ -11,8 +11,8 @@ import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
-import AccountCircle from '@mui/icons-material/AccountCircle';
-import MailIcon from '@mui/icons-material/Mail';
+import ArticleIcon from '@mui/icons-material/Article';
+import GitHubIcon from '@mui/icons-material/GitHub';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 
@@ -97,8 +97,42 @@ export default function PrimarySearchAppBar() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <a
+        href="https://github.com/journeycruz/react-hooks"
+        rel="noreferrer"
+        target="_blank"
+      >
+        <MenuItem>
+          <IconButton
+            size="large"
+            aria-label="github-repository-link"
+            color="inherit"
+          >
+            <Badge>
+              <GitHubIcon />
+            </Badge>
+          </IconButton>
+          <p>Github</p>
+        </MenuItem>
+      </a>
+      <a
+        href="https://reactjs.org/docs/hooks-reference.html"
+        rel="noreferrer"
+        target="_blank"
+      >
+        <MenuItem>
+          <IconButton
+            size="large"
+            aria-label="react-hook-documentation-link"
+            color="inherit"
+          >
+            <Badge>
+              <ArticleIcon />
+            </Badge>
+          </IconButton>
+          <p>React Docs</p>
+        </MenuItem>
+      </a>{' '}
     </Menu>
   );
 
@@ -119,15 +153,25 @@ export default function PrimarySearchAppBar() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem>
-        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="error">
-            <MailIcon />
-          </Badge>
-        </IconButton>
-        <p>Messages</p>
-      </MenuItem>
-      <MenuItem>
+      <a
+        href="https://github.com/journeycruz/react-hooks"
+        rel="noreferrer"
+        target="_blank"
+      >
+        <MenuItem>
+          <IconButton
+            size="large"
+            aria-label="github-repository-link"
+            color="inherit"
+          >
+            <Badge>
+              <GitHubIcon />
+            </Badge>
+          </IconButton>
+          <p>Github</p>
+        </MenuItem>
+      </a>
+      {/* <MenuItem>
         <IconButton
           size="large"
           aria-label="show 17 new notifications"
@@ -138,27 +182,33 @@ export default function PrimarySearchAppBar() {
           </Badge>
         </IconButton>
         <p>Notifications</p>
-      </MenuItem>
-      <MenuItem onClick={handleProfileMenuOpen}>
-        <IconButton
-          size="large"
-          aria-label="account of current user"
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-          color="inherit"
-        >
-          <AccountCircle />
-        </IconButton>
-        <p>Profile</p>
-      </MenuItem>
+      </MenuItem> */}
+      <a
+        href="https://reactjs.org/docs/hooks-reference.html"
+        rel="noreferrer"
+        target="_blank"
+      >
+        <MenuItem>
+          <IconButton
+            size="large"
+            aria-label="react-hook-documentation-link"
+            color="inherit"
+          >
+            <Badge>
+              <ArticleIcon />
+            </Badge>
+          </IconButton>
+          <p>React Docs</p>
+        </MenuItem>
+      </a>
     </Menu>
   );
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" color='primary' sx={{ boxShadow: 0 }}>
+      <AppBar position="static" color="primary" sx={{ boxShadow: 0 }}>
         <Toolbar>
-          <IconButton
+          {/* <IconButton
             size="large"
             edge="start"
             color="inherit"
@@ -166,14 +216,14 @@ export default function PrimarySearchAppBar() {
             sx={{ mr: 2 }}
           >
             <MenuIcon />
-          </IconButton>
+          </IconButton> */}
           <Typography
-            variant="h6"
+            variant="h5"
             noWrap
             component="div"
             sx={{ display: { xs: 'block', sm: 'block' } }}
           >
-            React Hook Practice Exercises
+            React Hooks
           </Typography>
           <Search>
             <SearchIconWrapper>
@@ -186,16 +236,16 @@ export default function PrimarySearchAppBar() {
           </Search>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-            <IconButton
+            {/* <IconButton
               size="large"
               aria-label="show 4 new mails"
               color="inherit"
             >
               <Badge badgeContent={4} color="error">
-                <MailIcon />
+                <GitHubIcon />
               </Badge>
-            </IconButton>
-            <IconButton
+            </IconButton> */}
+            {/* <IconButton
               size="large"
               aria-label="show 17 new notifications"
               color="inherit"
@@ -203,7 +253,7 @@ export default function PrimarySearchAppBar() {
               <Badge badgeContent={17} color="error">
                 <NotificationsIcon />
               </Badge>
-            </IconButton>
+            </IconButton> */}
             <IconButton
               size="large"
               edge="end"
@@ -213,7 +263,7 @@ export default function PrimarySearchAppBar() {
               onClick={handleProfileMenuOpen}
               color="inherit"
             >
-              <AccountCircle />
+              <ArticleIcon />
             </IconButton>
           </Box>
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
