@@ -60,6 +60,9 @@ export default function PermanentDrawerRight() {
               boxSizing: 'border-box',
               background: '#F7F7F7'
             },
+            '& ::-webkit-scrollbar': {
+              display: 'none',
+            },
           }}
           className='drawer'
           variant='permanent'
