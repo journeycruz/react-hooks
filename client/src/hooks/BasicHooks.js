@@ -95,12 +95,6 @@ export const basicHooks = [
       <div key="5">
         <br />
         <h3>Step 2: Declare a New State Variable</h3>
-        <img
-          src="https://i.ibb.co/HDbSgbg/Declaring-a-New-State-Variable-1800-x-600-px-1.png"
-          alt="Declaring-a-New-State-Variable-1800-x-600-px-1"
-          border="0"
-          style={{ width: '100%' }}
-        ></img>
         <p>
           When writing a function component, declare a new state variable by
           calling the <Code>useState</Code> hook. The State Hook returns a pair
@@ -210,17 +204,17 @@ export const basicHooks = [
   {
     title: 'useEffect',
     to: 'useEffect',
-    description: null,
-    body: null,
-    usage: null,
-    stackBlitz: null
+    description: '',
+    body: '',
+    usage: '',
+    stackBlitz: ''
   },
   {
     title: 'useContext',
     to: 'useContext',
-    description: null,
-    body: null,
-    usage: null,
-    stackBlitz: null
+    description: '',
+    body: '',
+    usage: '',
+    stackBlitz: ''
   },
 ];

@@ -2,50 +2,57 @@ export const advancedHooks = [
   {
     title: 'useReducer',
     to: 'useReducer',
-    description: null,
-    usage: null,
-    stackBlitz: null,
+    description: '',
+    body: '',
+    usage: '',
+    stackBlitz: ''
   },
   {
     title: 'useCallback',
     to: 'useCallback',
-    description: null,
-    usage: null,
-    stackBlitz: null,
+    description: '',
+    body: '',
+    usage: '',
+    stackBlitz: ''
   },
   {
     title: 'useMemo',
     to: 'useMemo',
-    description: null,
-    usage: null,
-    stackBlitz: null,
+    description: '',
+    body: '',
+    usage: '',
+    stackBlitz: ''
   },
   {
     title: 'useRef',
     to: 'useRef',
-    description: null,
-    usage: null,
-    stackBlitz: null,
+    description: '',
+    body: '',
+    usage: '',
+    stackBlitz: ''
   },
   {
     title: 'useImperativeHandle',
     to: 'useImperativeHandle',
-    description: null,
-    usage: null,
-    stackBlitz: null,
+    description: '',
+    body: '',
+    usage: '',
+    stackBlitz: ''
   },
   {
     title: 'useLayoutEffect',
     to: 'useLayoutEffect',
-    description: null,
-    usage: null,
-    stackBlitz: null,
+    description: '',
+    body: '',
+    usage: '',
+    stackBlitz: ''
   },
   {
     title: 'useDebugValue',
     to: 'useDebugValue',
-    description: null,
-    usage: null,
-    stackBlitz: null,
+    description: '',
+    body: '',
+    usage: '',
+    stackBlitz: ''
   },
 ];

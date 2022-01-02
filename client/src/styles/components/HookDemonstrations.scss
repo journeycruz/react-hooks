@@ -4,8 +4,12 @@ main {
     background-color: white;
 }
 
-@media #{$sm-screen} {
+.drawer {
+    display: none;
+}
+
+@media #{$lg-screen} {
     .drawer {
-        display: none;
+        display: block;
     }
 }

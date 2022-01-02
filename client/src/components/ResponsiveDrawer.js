@@ -20,9 +20,6 @@ const theme = createTheme({
     primary: {
       main: '#20232A',
     },
-    secondary: {
-      main: '#F7F7F7',
-    },
   },
 });
 
@@ -45,7 +42,7 @@ export default function PermanentDrawerRight() {
         </AppBar>
         <Box
           component='main'
-          sx={{ flexGrow: 1, bgcolor: 'background.default', p: 10 }}
+          sx={{ flexGrow: 1, bgcolor: 'background.default', p: { xs: 3, md: 5, lg: 10 }, maxWidth: '100%' }}
         >
           <Toolbar />
           <HookDemonstrations />
