@@ -22,8 +22,8 @@ const theme = createTheme({
     },
     secondary: {
       main: '#F7F7F7',
-    }
-  }
+    },
+  },
 });
 
 const drawerWidth = '30%';
@@ -81,6 +81,11 @@ export default function PermanentDrawerRight() {
           </List>
           <Divider />
           <List>
+            <a className="list-title" href="#advanced-hooks">
+              <ListItem>
+                <ListItemText primary="Advanced Hooks" />
+              </ListItem>
+            </a>
             {advancedHooks.map((text, index) => (
               <a href={'#' + text.to} key={index}>
                 <ListItem button>

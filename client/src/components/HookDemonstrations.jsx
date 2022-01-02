@@ -36,7 +36,7 @@ const HookDemonstrations = () => {
         </div>
       ))}
       <Toolbar />
-      <Toolbar />
+      <Toolbar id='advanced-hooks' />
       <h1>Advanced Hooks</h1>
       <br />
       <span className="lead">
