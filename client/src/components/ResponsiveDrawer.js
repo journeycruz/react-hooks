@@ -34,7 +34,7 @@ export default function PermanentDrawerRight() {
       <Box sx={{ display: 'flex' }}>
         <CssBaseline />
         <AppBar
-          position="fixed"
+          position='fixed'
           sx={{
             width: `calc(100% - ${drawerWidth}px)`,
             mr: `${drawerWidth}px`,
@@ -44,7 +44,7 @@ export default function PermanentDrawerRight() {
           <TopNavigation />
         </AppBar>
         <Box
-          component="main"
+          component='main'
           sx={{ flexGrow: 1, bgcolor: 'background.default', p: 10 }}
         >
           <Toolbar />
@@ -58,17 +58,18 @@ export default function PermanentDrawerRight() {
             '& .MuiDrawer-paper': {
               width: drawerWidth,
               boxSizing: 'border-box',
+              background: '#F7F7F7'
             },
           }}
-          className="drawer"
-          variant="permanent"
-          anchor="right"
+          className='drawer'
+          variant='permanent'
+          anchor='right'
         >
           <Toolbar />
-          <List className="list">
-            <a className="list-title" href="#basic-hooks">
+          <List className='list'>
+            <a className='list-title' href='#basic-hooks'>
               <ListItem>
-                <ListItemText primary="Basic Hooks" />
+                <ListItemText primary='Basic Hooks' />
               </ListItem>
             </a>
             {basicHooks.map((text, index) => (
@@ -81,26 +82,26 @@ export default function PermanentDrawerRight() {
           </List>
           <Divider />
           <List>
-            <a className="list-title" href="#advanced-hooks">
+            <a className='list-title' href='#advanced-hooks'>
               <ListItem>
-                <ListItemText primary="Advanced Hooks" />
+                <ListItemText primary='Advanced Hooks' />
               </ListItem>
             </a>
             {advancedHooks.map((text, index) => (
               <a href={'#' + text.to} key={index}>
                 <ListItem button>
-                  <ListItemText primary={text.title} />
+                  <ListItemText className='list-item-text' primary={text.title} />
                 </ListItem>
               </a>
             ))}
           </List>
           <Divider />
           <List>
-            {['Custom Hooks'].map((text, index) => (
-              <ListItem button key={index}>
-                <ListItemText primary={text} />
+            <a className='list-title' href='#custom-hooks'>
+              <ListItem>
+                <ListItemText primary='Custom Hooks' />
               </ListItem>
-            ))}
+            </a>
           </List>
           <Toolbar />
           <Toolbar />
