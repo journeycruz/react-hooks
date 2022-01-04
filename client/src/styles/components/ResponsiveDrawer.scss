@@ -1,5 +1,13 @@
 .list-title {
     text-transform: uppercase;
+    color: #6D6D6D;
+    font-family: 'Open Sans' sans-serif;
+    font-size: .75rem;
+    font-weight: 900;
+}
+
+.list-title:hover {
+    color: #000;
 }
 
 .list {

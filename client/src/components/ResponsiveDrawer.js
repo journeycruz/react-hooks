@@ -6,6 +6,13 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
+import Collapse from '@mui/material/Collapse';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import InboxIcon from '@mui/icons-material/MoveToInbox';
+import ExpandLess from '@mui/icons-material/ExpandLess';
+import ExpandMore from '@mui/icons-material/ExpandMore';
+import StarBorder from '@mui/icons-material/StarBorder';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import TopNavigation from './TopNavigation';
@@ -26,12 +33,27 @@ const theme = createTheme({
 const drawerWidth = '30%';
 
 export default function ResponsiveDrawer() {
+  const [bhOpen, setBHOpen] = React.useState(true);
+  const [ahOpen, setAHOpen] = React.useState(true);
+  const [chOpen, setCHOpen] = React.useState(true);
+
+  const showMoreBasicHooks = () => {
+    setBHOpen(!bhOpen);
+  };
+
+  const showMoreAdvHooks = () => {
+    setAHOpen(!ahOpen);
+
+  const showMoreCustomHooks = () => {
+    setCHOpen(!chOpen);
+  };
+
   return (
     <ThemeProvider theme={theme}>
       <Box sx={{ display: 'flex' }}>
         <CssBaseline />
         <AppBar
-          position='fixed'
+          position="fixed"
           sx={{
             width: `calc(100% - ${drawerWidth}px)`,
             mr: `${drawerWidth}px`,
@@ -41,8 +63,13 @@ export default function ResponsiveDrawer() {
           <TopNavigation />
         </AppBar>
         <Box
-          component='main'
-          sx={{ flexGrow: 1, bgcolor: 'background.default', p: { xs: 3, md: 5, lg: 10 }, maxWidth: '100%' }}
+          component="main"
+          sx={{
+            flexGrow: 1,
+            bgcolor: 'background.default',
+            p: { xs: 3, md: 5, lg: 10 },
+            maxWidth: '100%',
+          }}
         >
           <Toolbar />
           <HookDemonstrations />
@@ -55,53 +82,132 @@ export default function ResponsiveDrawer() {
             '& .MuiDrawer-paper': {
               width: drawerWidth,
               boxSizing: 'border-box',
-              background: '#F7F7F7'
+              background: '#F7F7F7',
+              borderLeft: '1px solid #ECECEC'
             },
             '& ::-webkit-scrollbar': {
               display: 'none',
             },
           }}
-          className='drawer'
-          variant='permanent'
-          anchor='right'
+          className="drawer"
+          variant="permanent"
+          anchor="right"
         >
           <Toolbar />
-          <List className='list'>
-            <a className='list-title' href='#basic-hooks'>
-              <ListItem>
-                <ListItemText primary='Basic Hooks' />
-              </ListItem>
-            </a>
-            {basicHooks.map((text, index) => (
-              <a href={'#' + text.to} key={index}>
-                <ListItem button>
-                  <ListItemText primary={text.title} />
-                </ListItem>
-              </a>
-            ))}
+          <Toolbar />
+          <List sx={{ pl: 5, alignItems: 'start' }} className="list">
+            <ListItemButton
+              onClick={showMoreBasicHooks}
+              alignItems="flex-start"
+              sx={{
+                margin: 'auto',
+                '&:hover': {
+                  backgroundColor: 'transparent',
+                  color: 'black',
+                  '& .MuiListItemIcon-root': {
+                    color: 'black',
+                  },
+                }
+              }}
+            >
+              <ListItemText
+                className="list-title"
+                sx={{ maxWidth: 'fit-content' }}
+                primary="Basic Hooks"
+              />
+              {bhOpen ? (
+                <ExpandLess sx={{ height: '1.25rem', marginTop: '.25rem' }} />
+              ) : (
+                <ExpandMore sx={{ height: '1.25rem', marginTop: '.25rem' }} />
+              )}
+            </ListItemButton>
+            <Collapse in={bhOpen} timeout="auto" unmountOnExit>
+              <List>
+                {basicHooks.map((text, index) => (
+                  <a href={'#' + text.to} key={index}>
+                    <ListItem button>
+                      <ListItemText primary={text.title} />
+                    </ListItem>
+                  </a>
+                ))}
+              </List>
+            </Collapse>
           </List>
-          <Divider />
-          <List>
-            <a className='list-title' href='#advanced-hooks'>
-              <ListItem>
-                <ListItemText primary='Advanced Hooks' />
-              </ListItem>
-            </a>
-            {advancedHooks.map((text, index) => (
-              <a href={'#' + text.to} key={index}>
-                <ListItem button>
-                  <ListItemText className='list-item-text' primary={text.title} />
-                </ListItem>
-              </a>
-            ))}
+          <List sx={{ pl: 5, alignItems: 'start' }} className="list">
+            <ListItemButton
+              onClick={showMoreAdvHooks}
+              alignItems="flex-start"
+              sx={{
+                margin: 'auto',
+                '&:hover': {
+                  backgroundColor: 'transparent',
+                  color: 'black',
+                  '& .MuiListItemIcon-root': {
+                    color: 'black',
+                  },
+                },
+              }}
+            >
+              <ListItemText
+                className="list-title"
+                sx={{ maxWidth: 'fit-content' }}
+                primary="Advanced Hooks"
+              />
+              {ahOpen ? (
+                <ExpandLess sx={{ height: '1.25rem', marginTop: '.25rem' }} />
+              ) : (
+                <ExpandMore sx={{ height: '1.25rem', marginTop: '.25rem' }} />
+              )}
+            </ListItemButton>
+            <Collapse in={ahOpen} timeout="auto" unmountOnExit>
+              <List>
+                {advancedHooks.map((text, index) => (
+                  <a href={'#' + text.to} key={index}>
+                    <ListItem button>
+                      <ListItemText primary={text.title} />
+                    </ListItem>
+                  </a>
+                ))}
+              </List>
+            </Collapse>
           </List>
-          <Divider />
-          <List>
-            <a className='list-title' href='#custom-hooks'>
-              <ListItem>
-                <ListItemText primary='Custom Hooks' />
-              </ListItem>
-            </a>
+          <List sx={{ pl: 5, alignItems: 'start' }} className="list">
+            <ListItemButton
+              onClick={showMoreCustomHooks}
+              alignItems="flex-start"
+              sx={{
+                margin: 'auto',
+                '&:hover': {
+                  backgroundColor: 'transparent',
+                  color: 'black',
+                  '& .MuiListItemIcon-root': {
+                    color: 'black',
+                  },
+                },
+              }}
+            >
+              <ListItemText
+                className="list-title"
+                sx={{ maxWidth: 'fit-content' }}
+                primary="Custom Hooks"
+              />
+              {chOpen ? (
+                <ExpandLess sx={{ height: '1.25rem', marginTop: '.25rem' }} />
+              ) : (
+                <ExpandMore sx={{ height: '1.25rem', marginTop: '.25rem' }} />
+              )}
+            </ListItemButton>
+            <Collapse in={chOpen} timeout="auto" unmountOnExit>
+              <List>
+                {advancedHooks.map((text, index) => (
+                  <a href={'#' + text.to} key={index}>
+                    <ListItem button>
+                      <ListItemText primary={text.title} />
+                    </ListItem>
+                  </a>
+                ))}
+              </List>
+            </Collapse>
           </List>
           <Toolbar />
           <Toolbar />
