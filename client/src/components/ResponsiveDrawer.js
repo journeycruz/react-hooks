@@ -43,6 +43,7 @@ export default function ResponsiveDrawer() {
 
   const showMoreAdvHooks = () => {
     setAHOpen(!ahOpen);
+  };
 
   const showMoreCustomHooks = () => {
     setCHOpen(!chOpen);
