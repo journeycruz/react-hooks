@@ -16,43 +16,75 @@ const App = () => {
 };`;
 
 const stateDeclaration = `const App = () => {
-  const [toggle, setToggle] = useState(false);
+  const [color, setColor] = useState('blue');
 };`;
 
-const updateState = `// Import State Hook from React
+const updateState = `// import React and the State Hook as a destructured function
 import React, { useState } from 'react';
 
 const App = () => {
-  // Declare new state variable
-  const [toggle, setToggle] = useState(false);
+  // Declare a state variable and function for updating it
+  const [color, setColor] = useState('blue'); // the value passed into the hook is the initial value of 'color'
 
   return (
     <div>
-      {/* function that will change state of toggle from false to true */}
-      <button onClick={() => setToggle(true)}>
-        Click Me
-      </button>
+      {/* Show the current state of color by writing the variable name in curly brackets */}
+      <p>The current state of color is: {color}</p>
+      {/* The onClick function below will change the color stored in state to 'red' */}
+      <button onClick={() => setColor('red')}>Click Me</button>
     </div>
-  )
-};`;
+  );
+};
 
-const displayState = `// Import State Hook from React
+export default App;
+`;
+
+const displayState = `// import React and the State Hook as a destructured function
 import React, { useState } from 'react';
 
 const App = () => {
-  // Declare new state variable
-  const [toggle, setToggle] = useState(false);
+  // Declare a state variable and function for updating it
+  const [color, setColor] = useState('blue'); // the value passed into the hook is the initial value of 'color'
 
   return (
     <div>
-      {/* function that will change state of toggle from false to true */}
-      <h1>The current value of toggle is: {toggle}</h1>
-      <button onClick={() => setToggle(true)}>
-        Click Me
-      </button>
+      {/* Show the current state of color by writing the variable name in curly brackets */}
+      <p>The current state of color is: {color}</p>
     </div>
-  )
-};`;
+  );
+};
+
+export default App;
+`;
+
+const updateStateObject = `import React, { useState } from 'react';
+
+const App = () => {
+  const [person, setPerson] = useState({
+    firstName: 'John',
+    lastName: 'Doe',
+    age: 50,
+    eyeColor: 'blue',
+  });
+
+  const handleClick = () => {
+    setPerson(prevState => ({
+      ...prevState,
+      eyeColor: 'green'
+    }));
+  };
+
+  return (
+    <div>
+      <pre>{JSON.stringify(person, null, '\t')}</pre>
+      <button onClick={handleClick}>Change eye color</button>
+    </div>
+  );
+};
+
+export default App;
+`;
+
 export const basicHooks = [
   {
     title: 'useState',
@@ -170,6 +202,12 @@ export const basicHooks = [
         <p>
           As previously mentioned, you can hold full objects in state using the State hook. However, unlike class components you have to be more careful when trying to update the data in the state becuase the function used to update the state replaces the current data by default. If you need to merge data into object it is still possible by using the spread operator to include all data currently in the state on new update.
         </p>
+        <CodeBlock
+          language="jsx"
+          showLineNumbers={true}
+          text={updateStateObject}
+          highlight="11"
+        />
       </div>,
       <div key="10">
         <br />
