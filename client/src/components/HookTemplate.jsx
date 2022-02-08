@@ -8,7 +8,6 @@ const HookTemplate = ({ title, description, body, usage, stackBlitz }) => {
       <h2 className='title'>{title}</h2>
       <br />
       <Divider />
-      <span>Hello.</span>
       <br />
       <span className='lead'>{description}</span>
       <span>{body}</span>

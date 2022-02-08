@@ -7,9 +7,6 @@ function App() {
   return (
     <div className="App">
       <ResponsiveDrawer />
-      <div>
-        <span>Hello.</span>
-      </div>
     </div>
   );
 }
